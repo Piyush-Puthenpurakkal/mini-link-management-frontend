@@ -1,0 +1,56 @@
+.customization-container {
+    max-width: 600px;
+    margin: 50px auto;
+    text-align: center;
+}
+
+.theme-selector,
+.button-style-selector,
+.layout-selector {
+    margin-bottom: 20px;
+}
+
+.theme-options,
+.button-options,
+.layout-options {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+}
+
+.theme-btn,
+.btn-style,
+.layout-btn {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.theme-btn.active,
+.btn-style.active,
+.layout-btn.active {
+    background: #007bff;
+    color: white;
+}
+
+.theme-btn:hover,
+.btn-style:hover,
+.layout-btn:hover {
+    background: #0056b3;
+}
+
+.save-btn {
+    padding: 10px;
+    background: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.save-btn:hover {
+    background: darkgreen;
+}

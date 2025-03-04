@@ -1,0 +1,731 @@
+.appearance-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    margin-left: 250px;
+    width: calc(100% - 270px);
+    flex-wrap: wrap;
+}
+
+.greeting {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: var(--font-color);
+    flex-basis: 100%;
+}
+
+.analytics-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: var(--font-color);
+}
+
+/* Profile Preview */
+/* Outer container: phone-like shape */
+.profile-preview-container {
+    width: 300px;
+    height: 600px;
+    border-radius: 25px;
+    border: 5px solid black;
+    background-color: #f0f0f0;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+/* Top banner (e.g., a background color or image) */
+.profile-preview-banner {
+    width: 100%;
+    height: 150px;
+    position: relative;
+}
+
+/* Avatar overlaps the banner from the bottom */
+.profile-preview-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    position: absolute;
+    bottom: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 3px solid #fff;
+    object-fit: cover;
+}
+
+/* Body content below the banner */
+.profile-preview-body {
+    margin-top: 60px;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* Username text */
+.profile-preview-username {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+/* ---------- Toggle Switch Styles ---------- */
+
+.profile-toggle-container .preview-toggle {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 40px;
+    width: 300px;
+    border-radius: 20px;
+    background: rgb(226, 223, 223);
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+}
+
+.profile-toggle-container .toggleCheckbox {
+    display: none;
+}
+
+.profile-toggle-container .toggleContainer {
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 30px;
+    width: 200px;
+    border-radius: 20px;
+    background: rgb(226, 223, 223);
+    font-weight: bold;
+    color: gray;
+    cursor: pointer;
+}
+
+.profile-toggle-container .toggleContainer div {
+    padding: 6px;
+    text-align: center;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    transition: color 0.3s;
+}
+
+.profile-toggle-container .toggleContainer::before {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    left: 0%;
+    border-radius: 20px;
+    background: #28a745;
+    transition: all 0.3s;
+}
+
+.profile-toggle-container .toggleCheckbox:checked+.toggleContainer::before {
+    left: 50%;
+}
+
+.profile-toggle-container .toggleCheckbox:checked+.toggleContainer div:first-child {
+    color: gray;
+    transition: color 0.3s;
+}
+
+.profile-toggle-container .toggleCheckbox:checked+.toggleContainer div:last-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+.profile-toggle-container .toggleCheckbox+.toggleContainer div:first-child {
+    color: white;
+    transition: color 0.3s;
+}
+
+.profile-toggle-container .toggleCheckbox+.toggleContainer div:last-child {
+    color: gray;
+    transition: color 0.3s;
+}
+
+/* Link items container */
+.profile-preview-links {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Each link item (like “Latest YouTube Video”) */
+.preview-link-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 80%;
+    padding: 10px;
+    border-radius: 25px;
+    font-size: 14px;
+    color: #333;
+    justify-content: center;
+}
+
+/* For the shop item container */
+.profile-preview-shop {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 15px;
+}
+
+.shop-item-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 12px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    max-width: 220px;
+}
+
+.shop-item-card button:hover {
+    background-color: #218838;
+}
+
+.link-icon {
+    width: 24px;
+    height: 24px;
+}
+
+/* CTA button */
+.profile-preview-cta {
+    margin-top: 20px;
+    padding: 12px 20px;
+    background-color: #28a745;
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.profile-preview-cta:hover {
+    background-color: #218838;
+}
+
+/* Branding / Footer at bottom */
+.profile-preview-brand {
+    margin-top: auto;
+    font-size: 12px;
+    color: #666;
+    padding-bottom: 10px;
+}
+
+/* Customization Panel */
+.customization-panel {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width: 55%;
+    max-width: 450px;
+    padding: 20px;
+    border-radius: 10px;
+    padding-bottom: 60px;
+    margin-left: 140px;
+}
+
+/* Customization Sections */
+.customization-section {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.customization-section h3 {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+/* Layout Selector */
+
+/* Overall container for the Layout section */
+.layout-section {
+    margin: 20px 0;
+}
+
+/* Section title (e.g. "Layout") */
+.layout-title {
+    margin-bottom: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    color: #000;
+}
+
+/* White box containing all layout options */
+.layout-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    gap: 16px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Each clickable card */
+.layout-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 80px;
+    height: 80px;
+    cursor: pointer;
+    border: 1px solid #eee;
+    border-radius: 6px;
+    transition: background-color 0.2s ease;
+}
+
+.layout-stack {
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-grid {
+    justify-content: center;
+    align-items: center;
+}
+
+.layout-carousel {
+    justify-content: center;
+    align-items: center;
+}
+
+/* Icon inside each card */
+.layout-icon {
+    width: 24px;
+    height: 24px;
+    margin-bottom: 8px;
+}
+
+/* Label below the icon */
+.layout-label {
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    color: #333;
+}
+
+/* Hover effect */
+.layout-card:hover {
+    background-color: #f9f9f9;
+}
+
+/* The selected (active) card */
+.layout-card.selected {
+    background-color: #f5f5f5;
+    border-color: #ccc;
+}
+
+/* For ProfilePreview links container with layout class */
+
+/* Stack Layout: Vertical list (default) */
+.profile-preview-links.layout-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    align-items: center;
+}
+
+/* Grid Layout: Two-column grid */
+.profile-preview-links.layout-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+    width: 100%;
+    justify-items: center;
+}
+
+/* Carousel Layout: Horizontal scroll */
+.profile-preview-links.layout-carousel {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    overflow-x: auto;
+    white-space: nowrap;
+    width: 100%;
+    align-items: center;
+    padding: 0 10px 10px;
+    scroll-behavior: smooth;
+}
+
+/* Hide scrollbar in WebKit browsers for carousel */
+.profile-preview-links.layout-carousel::-webkit-scrollbar {
+    display: none;
+}
+
+/* Ensure each link item doesn't shrink in carousel layout */
+.profile-preview-links.layout-carousel .preview-link-item {
+    flex: 0 0 auto;
+}
+
+.profile-preview-links.layout-carousel::before {
+    content: "";
+    flex: 0 0 260px;
+    /* Adjust this spacer width as needed */
+}
+
+/* Optionally add a right spacer */
+.profile-preview-links.layout-carousel::after {
+    content: "";
+    flex: 0 0 10px;
+    /* Adjust as needed */
+}
+
+/* Button Styles */
+/* Overall container for all button styles */
+.button-style-selector {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    padding: 10px;
+}
+
+/* Category block (Fill, Outline, etc.) */
+.button-style-group {
+    background-color: white;
+    padding: 0px 15px;
+    color: #333;
+}
+
+/* Category title (e.g. "Fill") */
+.button-style-group-title {
+    font-size: 16px;
+    font-weight: 600;
+}
+
+/* Container for the style options within a category */
+.button-style-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+/* Each clickable style preview */
+.button-style-option {
+    flex: 0 0 auto;
+    width: 90px;
+    height: 70px;
+    border-radius: 6px;
+    padding: 8px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.2s ease;
+    text-align: center;
+}
+
+.button-style-option img {
+    max-width: 100px;
+    margin-bottom: 4px;
+}
+
+.button-style-option p {
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+}
+
+.button-style-option:hover {
+    background-color: #f4f4f4;
+    width: auto;
+}
+
+/* Mark the currently selected style */
+.button-style-option.selected {
+    border-color: #333;
+    background-color: #f1f1f1;
+    width: auto;
+}
+
+/* Row that holds the color pickers at the bottom */
+.button-color-row {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    flex-direction: column;
+    color: #333;
+    background-color: white;
+}
+
+/* Each color picker block (for button color, font color) */
+.color-picker-block {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: white;
+    padding: 10px;
+}
+
+.color-picker-block-meta {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.color-picker-block-font {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    background-color: #ccc;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.color-picker-block label {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.color-picker-block input[type="color"] {
+    width: 40px;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    margin-bottom: 5px;
+    padding: 0;
+}
+
+.color-picker-block p {
+    margin: 0;
+    font-size: 12px;
+    color: #333;
+    font-family: monospace;
+}
+
+/* Fonts */
+/* Container for the entire font selector */
+.font-selector {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 10px;
+    color: #333;
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1)
+}
+
+/* Label for "Font" and "Color" */
+.font-label,
+.font-color-label {
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+/* The box that displays the current font (Aa + DM Sans) */
+.font-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    cursor: pointer;
+    position: relative;
+}
+
+.font-box-icon {
+    width: 24px;
+    height: 24px;
+    margin-right: 8px;
+}
+
+.font-box-name {
+    font-size: 14px;
+    color: #333;
+}
+
+/* Dropdown with font options */
+.font-dropdown {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    margin-top: -5px;
+    padding: 5px 0;
+}
+
+.font-dropdown-option {
+    padding: 8px 12px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.font-dropdown-option:hover {
+    background-color: #f2f2f2;
+}
+
+/* The color picker row */
+.font-color-box {
+    display: flex;
+    align-items: center;
+    background-color: white;
+}
+
+.font-color-picker {
+    width: 55px;
+    height: 55px;
+    border: none;
+    cursor: pointer;
+    background: none;
+}
+
+.font-color-meta {
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    padding: 5px;
+    background-color: #ccc;
+    border-radius: 5px;
+}
+
+.font-color-text {
+    font-size: 12px;
+    color: #333;
+    font-family: monospace;
+    margin: 0;
+}
+
+/* ThemeSelector.css */
+
+/* Theme preview default styling */
+.theme-preview {
+    width: 100px;
+    height: 150px;
+    border-radius: 8px;
+    border: 1px solid #ddd;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: transform 0.2s;
+}
+
+.theme-selector {
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.theme-grid {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 30px;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Theme preview line styling */
+.theme-line {
+    width: 60%;
+    height: 8px;
+    border-radius: 4px;
+    background-color: currentColor;
+    opacity: 0.8;
+}
+
+.theme-line.short {
+    width: 40%;
+}
+
+/* Theme label styling */
+.theme-label {
+    margin-top: 8px;
+    font-size: 14px;
+    color: #333;
+    text-align: center;
+}
+
+/* Hover and selected state */
+.theme-card:hover .theme-preview {
+    transform: translateY(-2px);
+}
+
+.theme-card.selected .theme-preview {
+    border-color: var(--accent-color, #333);
+}
+
+/* Specific theme preview classes */
+.theme-preview.air-snow {
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.theme-preview.air-grey {
+    background-color: #f0f0f0;
+    color: #333333;
+}
+
+.theme-preview.air-smoke {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+.theme-preview.air-black {
+    background-color: #000000;
+    color: #ffffff;
+}
+
+.theme-preview.mineral-blue {
+    background-color: #d7eeff;
+    color: #333333;
+}
+
+.theme-preview.mineral-green {
+    background-color: #ccffcc;
+    color: #333333;
+}
+
+.theme-preview.mineral-orange {
+    background-color: #ffe5cc;
+    color: #333333;
+}
+
+/* Save Button */
+.save-btn-appearance {
+    max-width: 235px;
+    width: 100%;
+    margin-right: 15px;
+    padding: 12px;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    align-self: flex-end;
+}

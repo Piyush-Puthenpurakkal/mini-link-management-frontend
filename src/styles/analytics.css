@@ -1,0 +1,251 @@
+.analytics-container {
+    padding: 30px;
+    margin-left: 250px;
+    max-width: calc(100% - 250px);
+}
+
+.scrollable-chart-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100%;
+}
+
+.scrollable-chart-container::-webkit-scrollbar {
+    display: none;
+}
+
+.scrollable-chart-inner {
+    min-width: 500px;
+    display: inline-block;
+}
+
+.analytics-title {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 20px;
+}
+
+.filter {
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.filter label {
+    font-weight: bold;
+    margin-left: 5px;
+}
+
+.date-picker-wrapper {
+    background-color: white;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 14px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* justify-content: space-between; */
+    min-width: 170px;
+    font-weight: 500;
+    margin-right: 40px;
+    margin-left: auto;
+}
+
+.date-picker-wrapper:hover {
+    border-color: #10b981;
+}
+
+.calendar-icon {
+    color: #6b7280;
+    margin-right: 8px;
+}
+
+.date-display {
+    font-size: 16px;
+    color: #333;
+    font-weight: 500;
+}
+
+.hidden-datepicker {
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+    width: 0;
+    height: 0;
+}
+
+.overview-container {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.overview-card-links {
+    background: rgb(3, 233, 99);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overview-card-shops {
+    background: rgb(204, 224, 218);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.overview-card-cta {
+    background: rgb(204, 224, 218);
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+    min-width: 200px;
+    max-width: 280px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.chart-container {
+    background: #fff;
+    padding: 25px;
+    margin-top: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 950px;
+}
+
+.analytics-charts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 25px;
+    justify-content: center;
+}
+
+.charts-row {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.device-chart-box {
+    flex: 1;
+    margin-right: 20px;
+    padding: 20px;
+    width: 450px;
+    color: #333;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.links-chart-box {
+    width: 600px;
+    padding: 20px;
+    color: #333;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+/* Pie Chart Container */
+.pie-chart-box {
+    margin-left: 50px;
+}
+
+.pie-chart-container {
+    background: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 300px;
+}
+
+.pie-chart {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/* Pie Chart Title */
+.pie-chart-title {
+    font-size: 18px;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 15px;
+    width: 100%;
+    text-align: left;
+}
+
+/* Wrapper for Pie Chart & Legend */
+.chart-legend-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Custom Legend */
+.custom-legend {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1; */
+    width: 40%;
+    margin-top: 10px;
+    margin-left: 10px;
+    padding: 0 10px;
+}
+
+/* Legend Items */
+.legend-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 14px;
+    font-weight: 500;
+    color: #333;
+    padding: 4px 0;
+}
+
+/* Legend Dot */
+.legend-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+/* Legend Labels */
+.legend-label {
+    flex: 1;
+    text-align: left;
+}
+
+/* Legend Values */
+.legend-value {
+    text-align: right;
+    font-weight: bold;
+}

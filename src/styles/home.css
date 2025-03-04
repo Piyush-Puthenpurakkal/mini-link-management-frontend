@@ -1,0 +1,684 @@
+/* home.css */
+
+/* Wrapper for the entire page */
+.home-container {
+    width: 100%;
+    margin: 0 auto;
+    font-family: Arial, sans-serif;
+}
+
+/* 1. Top Bar */
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 1rem auto;
+    padding: 0.75rem 1.5rem;
+    border-radius: 9999px;
+    background-color: #fff;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo at the left */
+.top-bar-logo {
+    height: 40px;
+    width: auto;
+}
+
+.signup-button {
+    background-color: #218838;
+    color: #fff;
+    text-decoration: none;
+    padding: 1rem 1.2rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.signup-button:hover {
+    background-color: #28a745;
+    transform: scale(1.05);
+}
+
+/* 2. Hero Section */
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 3rem 2rem;
+    background-color: #fafafa;
+}
+
+/* Hero text (left side) */
+.hero-text {
+    max-width: 50%;
+}
+
+.hero-title {
+    font-size: 2.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.hero-subtitle {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+}
+
+.hero-cta {
+    background-color: #28a745;
+    color: #fff;
+    text-decoration: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    font-size: 1rem;
+}
+
+.hero-cta:hover {
+    background-color: #218838;
+}
+
+/* Hero image (right side) */
+.hero-image-container {
+    max-width: 45%;
+    text-align: right;
+}
+
+.hero-analytics-img {
+    width: 100%;
+    max-width: 400px;
+    /* adjust as needed */
+    border-radius: 10px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-text {
+        max-width: 100%;
+        margin-bottom: 2rem;
+    }
+
+    .hero-image-container {
+        max-width: 100%;
+        text-align: center;
+    }
+}
+
+/* Container for the monetization + analytics section */
+.monetization-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+}
+
+.monetization-left {
+    position: relative;
+    width: 450px;
+    height: 250px;
+    margin-right: 30px;
+}
+
+.monetization-images {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+}
+
+/* Common styling for each chart image */
+.chart-image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-radius: 12px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Manually offset each child to overlap horizontally.
+     Adjust these 'left' values to get the desired partial overlap. */
+.chart-image:nth-child(1) {
+    left: -120px;
+}
+
+.chart-image:nth-child(2) {
+    left: -50px;
+}
+
+.chart-image:nth-child(3) {
+    left: 20px;
+}
+
+.chart-image:nth-child(4) {
+    left: 90px;
+}
+
+/* The last one ($4560) might be slightly larger or fully visible */
+.chart-image:nth-child(5) {
+    left: 160px;
+}
+
+/* On hover, “lift” the card and bring it to the front */
+.chart-image:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+
+.monetization-subtext {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    margin: 0 1rem 1rem;
+    font-size: 1rem;
+    color: #555;
+    max-width: 90%;
+}
+
+.monetization-right {
+    flex: 1;
+    text-align: left;
+    display: flex;
+    height: 260px;
+    flex-direction: column;
+    justify-content: flex-start;
+    text-align: left;
+    padding: 1rem;
+}
+
+.monetization-right h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.monetization-right p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+    .monetization-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .monetization-left,
+    .monetization-right {
+        margin: 0;
+    }
+
+    .monetization-chart {
+        max-width: 80%;
+        margin: 0 auto 1rem auto;
+    }
+}
+
+/* Limitless Section */
+.limitless-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 60px 5%;
+    background-color: #fff;
+    margin: 40px auto;
+    max-width: 1200px;
+    border-radius: 12px;
+}
+
+/* Left side text */
+.limitless-left {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.limitless-left h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.limitless-left p {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+/* Right side gray box + images */
+.limitless-right {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.limitless-images-box {
+    position: relative;
+    background-color: #f2f2f2;
+    padding: 20px;
+    border-radius: 12px;
+    height: 300px;
+    width: 100%;
+    margin-bottom: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.limitless-images {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+}
+
+.limitless-subtext {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    font-size: 1rem;
+    color: #555;
+    margin: 0;
+}
+
+.limitless-images img.full-display {
+    object-fit: cover;
+    width: auto;
+}
+
+.limitless-images img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+    .limitless-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .limitless-left,
+    .limitless-right {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .limitless-images {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .limitless-images img {
+        width: 80px;
+        height: 80px;
+    }
+}
+
+/* Customer Stories Section */
+.customer-stories-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    padding: 60px 5%;
+    margin: 40px auto;
+    max-width: 1200px;
+}
+
+/* Left side: heading, description, button */
+.customer-left {
+    flex: 1;
+    margin-right: 30px;
+}
+
+.customer-heading {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 1rem;
+}
+
+.green-text {
+    color: #28a745;
+    font-weight: bold;
+}
+
+.customer-description {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+/* Outline button for "Read customer stories" */
+.read-stories-btn {
+    display: inline-block;
+    border: 2px solid #28a745;
+    color: #28a745;
+    background-color: transparent;
+    padding: 0.8rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+}
+
+.read-stories-btn:hover {
+    background-color: #28a745;
+    color: #fff;
+}
+
+/* Right side: icon */
+.customer-right {
+    flex: 1;
+    flex-direction: column;
+    text-align: right;
+}
+
+.customer-icon {
+    max-width: 50px;
+    width: 100%;
+}
+
+@media (max-width: 992px) {
+    .customer-stories-section {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .customer-left,
+    .customer-right {
+        margin: 0;
+        max-width: 100%;
+    }
+
+    .customer-icon {
+        margin-top: 20px;
+    }
+}
+
+/* Testimonials Grid Section */
+.testimonials-grid-section {
+    background-color: #fff;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 40px auto;
+    border-radius: 12px;
+}
+
+/* Grid of 4 cards, 2 columns × 2 rows */
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+}
+
+/* Each testimonial card */
+.testimonial-card {
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Heading inside each card */
+.testimonial-title {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+/* Paragraph inside each card */
+.testimonial-paragraph {
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 1.5rem;
+}
+
+/* User info row (icon + name/title) */
+.testimonial-user {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* The green user icon */
+.user-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+/* Name/title text */
+.user-name {
+    font-weight: bold;
+    color: #333;
+    margin: 0;
+}
+
+.user-title {
+    font-size: 0.85rem;
+    color: #666;
+    margin: 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 768px) {
+    .testimonials-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Integrations Section */
+.integrations-section {
+    background-color: #fff;
+    padding: 60px 5%;
+    max-width: 1200px;
+    margin: 40px auto;
+}
+
+.integrations-heading {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 100px;
+}
+
+/* Grid of integration items */
+.integrations-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px 20px;
+}
+
+/* Each item with icon + text */
+.integration-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+.integration-icon {
+    width: 40px;
+    height: 40px;
+    object-fit: contain;
+}
+
+.integration-info h4 {
+    font-size: 1rem;
+    margin: 0 0 0.3rem 0;
+    color: #333;
+}
+
+.integration-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin: 0;
+}
+
+/* Responsive for smaller screens */
+@media (max-width: 992px) {
+    .integrations-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 600px) {
+    .integrations-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Footer Section */
+.home-footer-section {
+    background-color: white;
+    padding: 40px 5%;
+    margin-top: 40px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.footer-top-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 40px;
+}
+
+/* 1. Buttons (Log in / Sign up free) */
+.footer-buttons {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 20px;
+}
+
+.footer-login-btn,
+.footer-signup-btn {
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 1rem;
+    padding: 0.6rem 1.2rem;
+    border-radius: 20px;
+    text-align: center;
+    border: none;
+}
+
+.footer-login-btn {
+    background-color: #f2f2f2;
+    color: #333;
+    border-radius: 5px;
+}
+
+.footer-signup-btn {
+    background-color: #28a745;
+    color: #fff;
+    border: 2px solid #28a745;
+}
+
+.footer-login-btn:hover {
+    background-color: #e2e2e2;
+}
+
+.footer-signup-btn:hover {
+    background-color: #218838;
+    border-color: #218838;
+}
+
+/* 2. Footer Links Row */
+.footer-links-row {
+    display: flex;
+    gap: 100px;
+    flex-wrap: wrap;
+    margin-right: 100px;
+}
+
+.footer-links-row ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.footer-links-row li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    color: #333;
+    cursor: pointer;
+}
+
+.footer-links-row li:hover {
+    text-decoration: underline;
+}
+
+.footer-bottom-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+/* 3. Acknowledgment Text */
+.footer-acknowledgment {
+    font-size: 0.85rem;
+    color: #666;
+    line-height: 1.5;
+}
+
+/* 4. Social Icons */
+.footer-socials {
+    display: flex;
+    gap: 30px;
+}
+
+.footer-socials img {
+    width: 33px;
+    height: 24px;
+    cursor: pointer;
+}
+
+.footer-socials img:hover {
+    opacity: 0.8;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .footer-buttons {
+        flex-direction: column;
+    }
+
+    .footer-links-row {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .footer-socials {
+        justify-content: center;
+    }
+}
