@@ -1,5 +1,7 @@
 import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
+import { auth, googleProvider } from "../firebaseConfig";
+import { signInWithPopup } from "firebase/auth";
 import API from "../api/axiosInstance";
 import "../styles/auth.css";
 import googleIcon from "../assets/google-icon.png";
@@ -25,6 +27,36 @@ const Signup = () => {
     }
   };
 
+  const handleGoogleSignIn = async () => {
+    try {
+      const result = await signInWithPopup(auth, googleProvider);
+      const user = result.user;
+
+      // Send user info to backend for authentication
+      const response = await fetch("http://localhost:5000/api/auth/google", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        credentials: "include",
+        body: JSON.stringify({
+          uid: user.uid,
+          email: user.email,
+          name: user.displayName,
+        }),
+      });
+
+      const data = await response.json();
+      if (data.token) {
+        localStorage.setItem("token", data.token);
+        window.location.href = "/dashboard";
+      } else {
+        alert("Authentication failed. Please try again.");
+      }
+    } catch (error) {
+      console.error("Google Sign-In Error:", error);
+      alert("Something went wrong. Please try again.");
+    }
+  };
+
   return (
     <div className="auth-container">
       <div className="auth-left">
@@ -33,7 +65,7 @@ const Signup = () => {
             <img src={sparkLogo} alt="Spark Logo" className="spark-logo" />
           </div>
           <h2>Sign up to your Spark</h2>
-          <div class="signup-footer">
+          <div class="signup-footer-signup">
             <span>Create an account</span>
             <Link to="/login" className="auth-switch">
               Sign in instead
@@ -115,7 +147,7 @@ const Signup = () => {
           </div>
 
           {/* Google Signup Button */}
-          <button className="google-btn">
+          <button onClick={handleGoogleSignIn} className="google-btn">
             <img src={googleIcon} alt="Google" />
             Continue with Google
           </button>

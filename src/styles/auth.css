@@ -12,13 +12,34 @@ body {
     min-height: 100vh;
     width: 100vw;
     font-family: "Inter", sans-serif;
+    background-color: white;
 }
 
 .signup-footer {
     display: flex;
     justify-content: center;
+    color: #333;
     gap: 5px;
     font-size: 14px;
+}
+
+.signup-footer-signup {
+    display: flex;
+    justify-content: space-between;
+    width: 350px;
+    color: #333;
+    gap: 5px;
+    margin-bottom: 10px;
+    font-size: 14px;
+}
+
+.signup-footer-signup span {
+    font-weight: 600;
+    font-size: 21px;
+}
+
+.signup-footer-signup a {
+    padding-top: 7px;
 }
 
 /* Left Section */
@@ -41,6 +62,11 @@ body {
     width: 350px;
     text-align: center;
     flex-grow: 0;
+    color: #28a745;
+}
+
+.auth-links {
+    margin-top: 20px;
 }
 
 label {
@@ -72,9 +98,9 @@ input {
 
 /* Heading */
 .auth-box h2 {
-    font-size: 24px;
+    font-size: 33px;
     font-weight: bold;
-    margin-bottom: 15px;
+    margin-bottom: 30px;
     color: #333;
 }
 
@@ -89,6 +115,7 @@ input {
 .auth-box form {
     display: flex;
     flex-direction: column;
+    color: #333;
 }
 
 .auth-box form label {
@@ -97,9 +124,14 @@ input {
     margin-bottom: 5px;
 }
 
+.auth-box span {
+    color: #333;
+    text-align: left;
+}
+
 /* Input Fields */
 .auth-box input {
-    width: 100%;
+    width: 94%;
     padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -115,7 +147,7 @@ input {
 }
 
 .password-field input {
-    width: 100%;
+    width: 95%;
 }
 
 /* Eye Icon */
@@ -131,21 +163,22 @@ input {
 /* Buttons */
 .auth-btn,
 .login-btn {
-    width: 100%;
+    width: 350px;
     padding: 12px;
-    background: #4a76f7;
+    background: #386d3b;
     border: none;
-    border-radius: 5px;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 16px;
     color: white;
     font-weight: bold;
     transition: 0.3s;
+    margin-top: 10px;
 }
 
 .auth-btn:hover,
 .login-btn:hover {
-    background: #166FE5;
+    opacity: 0.9;
 }
 
 /* Disabled Button */
@@ -160,6 +193,7 @@ input {
 
 .signup-link {
     margin-left: 5px;
+    color: #28a745;
 }
 
 /* Right Section */
@@ -304,6 +338,7 @@ input {
     justify-content: center;
     background: white;
     border: 1px solid #ddd;
+    border-radius: 20px;
     padding: 12px;
     font-size: 16px;
     cursor: pointer;
@@ -323,5 +358,5 @@ input {
 
 .terms-container input {
     width: auto;
-    margin: 0;
+    margin-bottom: 20px;
 }
