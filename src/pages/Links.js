@@ -38,26 +38,11 @@ const Links = () => {
   const customization = {
     theme,
     layout,
-    avatar: image, // pass the real profile image as 'avatar'
+    avatar: image,
     bio,
-    username: user?.username, // pass the real username from AuthContext
-    bannerColor: bgColor, // pass the real banner color
+    username: user?.username,
+    bannerColor: bgColor,
   };
-
-  // useEffect(() => {
-  //   const handleClickOutside = (e) => {
-  //     if (!e.target.closest(".link-item") || e.target.tagName !== "INPUT") {
-  //       setLinks((prevLinks) =>
-  //         prevLinks.map((link) =>
-  //           link.editing ? { ...link, editing: false } : link
-  //         )
-  //       );
-  //     }
-  //   };
-
-  //   document.addEventListener("mousedown", handleClickOutside);
-  //   return () => document.removeEventListener("mousedown", handleClickOutside);
-  // }, []);
 
   useEffect(() => {
     fetchProfileData();
@@ -65,7 +50,7 @@ const Links = () => {
 
   const fetchProfileData = async () => {
     try {
-      const response = await axiosInstance.get("/user/profile", {
+      const response = await axiosInstance.get("api/user/profile", {
         withCredentials: true,
       });
 
@@ -88,7 +73,7 @@ const Links = () => {
       }
 
       // Fetch background color
-      const appearanceResponse = await axiosInstance.get("/appearance", {
+      const appearanceResponse = await axiosInstance.get("api/appearance", {
         withCredentials: true,
       });
 
@@ -107,7 +92,7 @@ const Links = () => {
       // Save updated username along with the current bio
       try {
         await axiosInstance.put(
-          "/user/profile",
+          "api/user/profile",
           { username: editableUsername, bio },
           { withCredentials: true }
         );
@@ -127,7 +112,7 @@ const Links = () => {
     setError("");
 
     try {
-      const response = await axiosInstance.get("/links");
+      const response = await axiosInstance.get("api/links");
 
       console.log("Full API Response:", response);
 
@@ -161,7 +146,7 @@ const Links = () => {
 
     try {
       const response = await axiosInstance.post(
-        "/user/upload-profile-image",
+        "api/user/upload-profile-image",
         formData,
         {
           withCredentials: true,
@@ -184,7 +169,7 @@ const Links = () => {
   // Remove Profile Image
   const handleImageRemove = async () => {
     try {
-      await axiosInstance.delete("/user/remove-profile", {
+      await axiosInstance.delete("api/user/remove-profile", {
         withCredentials: true,
       });
 
@@ -214,7 +199,7 @@ const Links = () => {
   const handleDelete = async (id) => {
     console.log("Attempting to delete link with ID:", id);
     try {
-      await axiosInstance.delete(`/links/${id}`);
+      await axiosInstance.delete(`api/links/${id}`);
       setLinks((prevLinks) => prevLinks.filter((link) => link._id !== id));
       console.log("Deleted link successfully.");
       addToast("success", "Link deleted successfully");
@@ -240,7 +225,7 @@ const Links = () => {
   const handleSave = async () => {
     try {
       await axiosInstance.put(
-        "/user/profile",
+        "api/user/profile",
         { username: editableUsername, bio },
         { withCredentials: true }
       );
@@ -248,7 +233,7 @@ const Links = () => {
       console.log("Profile updated successfully!");
       setIsEditingUsername(false);
       await axiosInstance.put(
-        "/appearance",
+        "api/appearance",
         { backgroundColor: bgColor },
         { withCredentials: true }
       );
@@ -287,7 +272,7 @@ const Links = () => {
       if (id.startsWith("temp-")) {
         // Create new link in backend
         const response = await axiosInstance.post(
-          "/links",
+          "api/links",
           {
             title: editedLink.title,
             url: editedLink.url,
@@ -311,7 +296,7 @@ const Links = () => {
       } else {
         // Update existing link in backend
         await axiosInstance.put(
-          `/links/${id}`,
+          `api/links/${id}`,
           { title: editedLink.title, url: editedLink.url },
           { withCredentials: true }
         );

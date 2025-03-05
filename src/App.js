@@ -34,7 +34,7 @@ const App = () => {
   useEffect(() => {
     const handleAuthSuccess = (event) => {
       if (event.data === "auth-success") {
-        window.location.reload(); // Refresh to apply login state
+        window.location.reload();
       }
     };
 

@@ -20,7 +20,7 @@ const Signup = () => {
 
   const onSubmit = async (data) => {
     try {
-      await API.post("/auth/register", data);
+      await API.post("api/auth/register", data);
       navigate("/login");
     } catch (error) {
       alert("Signup failed");

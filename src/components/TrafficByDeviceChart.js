@@ -12,7 +12,7 @@ import {
 const COLORS = ["#114c2e", "#38d9a9", "#9cf3d7", "#21c088"];
 
 const TrafficByDeviceChart = ({ data }) => {
-  console.log("📊 Device Data for Chart:", data); // ✅ Debugging
+  console.log("📊 Device Data for Chart:", data);
 
   if (!data || data.length === 0) {
     return <p>No data available for this chart.</p>;

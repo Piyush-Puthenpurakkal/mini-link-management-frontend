@@ -29,7 +29,7 @@ const AboutYourself = () => {
   const [loading, setLoading] = useState(false);
 
   useEffect(() => {
-    API.get("/user/profile")
+    API.get("api/user/profile")
       .then((res) => {
         setUsername(res.data.username || "");
         setSelectedCategory(res.data.category || "");
@@ -50,7 +50,7 @@ const AboutYourself = () => {
 
     setLoading(true);
     try {
-      await API.put("/user/profile", {
+      await API.put("api/user/profile", {
         username,
         category: selectedCategory,
       });

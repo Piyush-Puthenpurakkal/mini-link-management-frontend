@@ -43,10 +43,10 @@ const Appearance = () => {
   useEffect(() => {
     const fetchCustomization = async () => {
       try {
-        const customizationRes = await API.get("/appearance", {
+        const customizationRes = await API.get("api/appearance", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
-        const profileRes = await API.get("/user/profile", {
+        const profileRes = await API.get("api/user/profile", {
           withCredentials: true,
         });
         const updatedCustomization = {
@@ -84,7 +84,7 @@ const Appearance = () => {
 
   const handleSaveChanges = async () => {
     try {
-      const res = await API.put("/appearance", customization, {
+      const res = await API.put("api/appearance", customization, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       addToast("success", "Customization saved successfully!");

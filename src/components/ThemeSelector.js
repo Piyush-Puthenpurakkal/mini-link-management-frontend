@@ -5,7 +5,6 @@ import { ThemeContext } from "../context/ThemeContext";
 const ThemeSelector = () => {
   const { theme, setTheme } = useContext(ThemeContext);
 
-  // Define theme options (id and label only)
   const themeOptions = [
     { id: "air-snow", label: "Air Snow" },
     { id: "air-grey", label: "Air Grey" },

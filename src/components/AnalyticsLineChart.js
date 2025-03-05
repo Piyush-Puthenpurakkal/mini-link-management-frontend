@@ -10,7 +10,7 @@ import {
 } from "recharts";
 
 const AnalyticsLineChart = ({ data }) => {
-  console.log("📊 Line Chart Data:", data); // ✅ Debugging
+  console.log("📊 Line Chart Data:", data);
 
   if (!data || data.length === 0) {
     return <p>No data available for this chart.</p>;

@@ -26,13 +26,13 @@ const Analytics = () => {
         setLoading(true);
 
         const res = await API.get(
-          `/analytics?start_date=${format(
+          `api/analytics?start_date=${format(
             startDate,
             "yyyy-MM-dd"
           )}&end_date=${format(endDate, "yyyy-MM-dd")}`
         );
 
-        console.log("📡 Analytics Data Fetched:", res.data); // ✅ Debugging API response
+        console.log("📡 Analytics Data Fetched:", res.data);
 
         const defaultPlatformStats = {
           YouTube: 0,

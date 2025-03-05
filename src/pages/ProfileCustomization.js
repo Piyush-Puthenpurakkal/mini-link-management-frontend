@@ -15,7 +15,7 @@ const ProfileCustomization = () => {
   useEffect(() => {
     const fetchCustomization = async () => {
       try {
-        const res = await API.get("/profile/customization", {
+        const res = await API.get("api/profile/customization", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setCustomization(res.data);
@@ -28,7 +28,7 @@ const ProfileCustomization = () => {
 
   const handleSaveChanges = async () => {
     try {
-      await API.put("/profile/customization", customization, {
+      await API.put("api/profile/customization", customization, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       alert("Customization saved successfully!");
