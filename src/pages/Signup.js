@@ -9,6 +9,10 @@ import signupIllustration from "../assets/illustration.png";
 import sparkLogo from "../assets/spark-logo.png";
 import divider from "../assets/divider.png";
 
+// 1. Strong password regex
+const strongPasswordRegex =
+  /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!@#$%^*])[A-Za-z\d!@#$%^*]{8,}$/;
+
 const Signup = () => {
   const navigate = useNavigate();
   const {
@@ -107,10 +111,11 @@ const Signup = () => {
             <input
               type="password"
               {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters",
+                required: "Please enter your password*",
+                pattern: {
+                  value: strongPasswordRegex,
+                  message:
+                    "Please choose a strong password (8+ chars) with at least 1 lowercase, 1 uppercase, 1 number, and 1 special character (!@#$%^*)",
                 },
               })}
             />
@@ -123,7 +128,8 @@ const Signup = () => {
               {...register("confirmPassword", {
                 required: "Confirm Password is required",
                 validate: (value) =>
-                  value === watch("password") || "Passwords do not match",
+                  value === watch("password") ||
+                  "The password you entered does not match*",
               })}
             />
             {errors.confirmPassword && (
