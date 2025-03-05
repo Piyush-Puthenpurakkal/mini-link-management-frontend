@@ -528,7 +528,7 @@ const Links = () => {
                                 ) : (
                                   <div className="link-url">
                                     <a
-                                      href={`http://localhost:5000/r/${link._id}`}
+                                      href={`https://mini-link-management-backend.onrender.com/r/${link._id}`}
                                       target="_blank"
                                       rel="noopener noreferrer"
                                     >
