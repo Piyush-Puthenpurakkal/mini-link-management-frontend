@@ -23,16 +23,19 @@ const AuthStart = () => {
       const user = result.user;
 
       // Send user info to backend for authentication
-      const response = await fetch("http://localhost:5000/api/auth/google", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        credentials: "include",
-        body: JSON.stringify({
-          uid: user.uid,
-          email: user.email,
-          name: user.displayName,
-        }),
-      });
+      const response = await fetch(
+        "https://mini-link-management-backend.onrender.com/api/auth/google",
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          credentials: "include",
+          body: JSON.stringify({
+            uid: user.uid,
+            email: user.email,
+            name: user.displayName,
+          }),
+        }
+      );
 
       const data = await response.json();
       if (data.token) {
