@@ -74,7 +74,7 @@ const AuthStart = () => {
           {/* Sign-in Link */}
           <p className="signup-footer">
             Already have an account?
-            <Link to="/signin" className="signup-link">
+            <Link to="/login" className="signup-link">
               Sign in
             </Link>
           </p>
