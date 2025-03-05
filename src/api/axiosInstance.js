@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:5000/api",
+  baseURL: "https://mini-link-management-backend.onrender.com",
 });
 
 // Automatically add Authorization token to every request
