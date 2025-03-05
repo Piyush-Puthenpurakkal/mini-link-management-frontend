@@ -20,7 +20,7 @@ const Settings = () => {
   useEffect(() => {
     const fetchUserInfo = async () => {
       try {
-        const res = await API.get("/settings");
+        const res = await API.get("api/settings");
         const { firstName = "", lastName = "", email = "" } = res.data;
 
         // Ensure both user state and formData are set correctly
