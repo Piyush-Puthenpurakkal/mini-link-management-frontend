@@ -18,7 +18,6 @@ const AnalyticsLineChart = ({ data }) => {
 
   return (
     <div className="chart-container">
-      <h3>Performance Over Time</h3>
       <div className="scrollable-chart-container">
         <div className="scrollable-chart-inner">
           <ResponsiveContainer width="100%" height={300}>
