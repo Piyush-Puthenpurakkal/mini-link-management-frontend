@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
   useEffect(() => {
     const token = localStorage.getItem("token");
     if (token) {
-      API.get("/user/profile", {
+      API.get("api/user/profile", {
         headers: { Authorization: `Bearer ${token}` },
       })
         .then((res) => setUser(res.data))
@@ -19,7 +19,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = (token) => {
     localStorage.setItem("token", token);
-    API.get("/user/profile", {
+    API.get("api/user/profile", {
       headers: { Authorization: `Bearer ${token}` },
     }).then((res) => setUser(res.data));
   };
