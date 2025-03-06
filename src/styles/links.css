@@ -640,3 +640,4 @@
     align-self: flex-end;
 }
 
+@media (max-width: 768px) {}

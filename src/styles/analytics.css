@@ -249,3 +249,48 @@
     text-align: right;
     font-weight: bold;
 }
+
+@media (max-width: 768px) {
+
+    /* Remove left offset and center the container */
+    .analytics-container {
+        margin: 0 auto;
+        max-width: 100%;
+        padding: 15px;
+        text-align: center;
+    }
+
+    /* Force the charts grid to fill and center the space */
+    .charts-grid {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        margin: 0 auto;
+        box-sizing: border-box;
+        padding: 0 15px;
+    }
+
+    /* Stack charts in a column and center them */
+    .charts-row {
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+        margin: 0 auto;
+    }
+
+    /* Make each chart box take full width */
+    .device-chart-box,
+    .links-chart-box,
+    .chart-container,
+    .pie-chart-container {
+        width: 93% !important;
+        max-width: 100% !important;
+        margin: 10px auto;
+    }
+
+    /* Remove extra left margin from the pie chart box */
+    .pie-chart-box {
+        margin-left: 0 !important;
+    }
+}

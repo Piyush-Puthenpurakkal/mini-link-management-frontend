@@ -29,6 +29,11 @@
     width: 100%;
 }
 
+/* 1) MOBILE HEADER (hidden on desktop) */
+.mobile-header {
+    display: none;
+}
+
 /* Sidebar */
 .sidebar {
     width: 170px;
@@ -41,6 +46,105 @@
     height: 100vh;
     display: flex;
     flex-direction: column;
+    transition: transform 0.3s ease;
+}
+
+/* On desktop, ignore the scroll-based transform: */
+.show-on-scroll {
+    transform: none;
+}
+
+.hide-on-scroll {
+    transform: none;
+}
+
+/* Media Query: Mobile/Tablet */
+@media (max-width: 768px) {
+
+    /* a) Show the mobile header */
+    .mobile-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 10px 16px;
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 9999;
+    }
+
+    .mobile-logo img {
+        width: 100px;
+    }
+
+    .mobile-profile {
+        position: relative;
+        cursor: pointer;
+    }
+
+    /* b) Hide the desktop logo & profile inside the sidebar on mobile */
+    .sidebar-logo,
+    .sidebar-profile {
+        display: none !important;
+    }
+
+    /* c) Turn the sidebar into a bottom nav bar */
+    .sidebar {
+        top: auto;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        border-top: 1px solid #ccc;
+        padding: 10px 0;
+        transform: translateY(100%);
+        z-index: 9999;
+        /* Start hidden; we'll toggle show/hide with JS classes */
+    }
+
+    .show-on-scroll {
+        transform: translateY(0%) !important;
+    }
+
+    .hide-on-scroll {
+        transform: translateY(100%) !important;
+    }
+
+    nav {
+        display: flex;
+        flex-direction: row !important;
+        justify-content: space-around;
+        gap: 0;
+        margin: 0;
+        padding: 0;
+    }
+
+    nav a {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 4px;
+        padding: 10px;
+        width: auto !important;
+        margin-left: 0 !important;
+        text-decoration: none;
+    }
+
+    .sidebar-icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    /* d) Adjust your main content so it doesn't hide behind top/bottom bars */
+    .dashboard-content {
+        margin-left: 0 !important;
+        padding-top: 60px;
+        padding-bottom: 80px;
+    }
 }
 
 .sidebar-logo {

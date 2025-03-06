@@ -728,3 +728,16 @@
     cursor: pointer;
     align-self: flex-end;
 }
+
+@media (max-width: 768px) {
+    .appearance-container {
+        flex-direction: column;
+        align-items: center;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .customization-panel {
+        margin-left: 0;
+    }
+}
