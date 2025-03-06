@@ -154,6 +154,20 @@
         padding-top: 60px;
         padding-bottom: 80px;
     }
+
+    .logout-popup {
+        left: 50% !important;
+        right: auto !important;
+        transform: translateX(-70%) !important;
+        width: 130px;
+        max-width: calc(100vw - 20px);
+        box-sizing: border-box;
+        top: 25px;
+    }
+
+    .logout-btn {
+        width: 100% !important;
+    }
 }
 
 .sidebar-logo {

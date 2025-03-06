@@ -9,8 +9,15 @@ import analytics from "../assets/dashboard/analytics-icon.png";
 import settings from "../assets/dashboard/settings-icon.png";
 import logoutIcon from "../assets/dashboard/logout-icon.png";
 
-const MobileHeader = ({ className, user, onLogout }) => {
+const MobileHeader = ({ showMobileHeader, className, user, onLogout }) => {
   const [showLogout, setShowLogout] = useState(false);
+
+  useEffect(() => {
+    if (!showMobileHeader) {
+      setShowLogout(false);
+    }
+  }, [showMobileHeader]);
+
   return (
     <header className={`mobile-header ${className}`}>
       <div className="mobile-logo">
@@ -87,6 +94,7 @@ const Sidebar = () => {
   return (
     <>
       <MobileHeader
+        showMobileHeader={showMobileHeader}
         className={
           showMobileHeader ? "show-mobile-header" : "hide-mobile-header"
         }
