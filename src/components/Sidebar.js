@@ -59,16 +59,19 @@ const Sidebar = () => {
     let headerTimeout = null;
 
     const handleScroll = () => {
+      if (
+        location.pathname === "/dashboard" ||
+        document.body.scrollHeight <= window.innerHeight
+      ) {
+        setShowMobileHeader(true);
+        setIsScrolling(true);
+        return;
+      }
       setIsScrolling(true);
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         setIsScrolling(false);
       }, 1000);
-
-      if (document.body.scrollHeight <= window.innerHeight) {
-        setShowMobileHeader(true);
-        return;
-      }
 
       if (window.pageYOffset === 0) {
         setShowMobileHeader(true);
@@ -85,6 +88,7 @@ const Sidebar = () => {
     };
 
     window.addEventListener("scroll", handleScroll);
+    handleScroll();
     return () => {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(scrollTimeout);
