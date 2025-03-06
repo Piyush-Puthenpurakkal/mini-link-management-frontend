@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
 import "../styles/dashboard.css";
+import defaultProfile from "../assets/avatar.png";
 import sparkLogo from "../assets/dashboard/spark-logo.png";
 import links from "../assets/dashboard/links-icon.png";
 import appearance from "../assets/dashboard/appearance-icon.png";
@@ -28,7 +29,7 @@ const MobileHeader = ({ showMobileHeader, className, user, onLogout }) => {
         onClick={() => setShowLogout(!showLogout)}
       >
         <img
-          src={user?.profileImage || "/assets/dashboard/sidebar-profile.png"}
+          src={user?.profileImage || defaultProfile}
           alt="Profile"
           className="profile-icon"
         />
@@ -159,7 +160,7 @@ const Sidebar = () => {
           onClick={() => setShowLogout(!showLogout)}
         >
           <img
-            src={user?.profileImage || "/assets/dashboard/sidebar-profile.png"}
+            src={user?.profileImage || defaultProfile}
             alt="Profile"
             className="profile-icon"
           />
