@@ -55,12 +55,6 @@ const Sidebar = () => {
   const [showMobileHeader, setShowMobileHeader] = useState(true);
 
   useEffect(() => {
-    setTimeout(() => {
-      window.dispatchEvent(new Event("scroll"));
-    }, 100);
-  }, [location.pathname]);
-
-  useEffect(() => {
     let scrollTimeout = null;
     let headerTimeout = null;
 
