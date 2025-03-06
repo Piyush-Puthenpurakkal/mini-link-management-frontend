@@ -109,86 +109,80 @@ const Sidebar = () => {
         user={user}
         onLogout={handleLogout}
       />
-      {!isDashboard && (
-        <aside
-          className={`sidebar ${
-            isScrolling ? "show-on-scroll" : "hide-on-scroll"
-          }`}
-        >
-          <div className="sidebar-logo">
-            <img src={sparkLogo} alt="Logo" />
-          </div>
-          <nav>
-            <Link
-              to="/links"
-              className={location.pathname === "/links" ? "active" : ""}
-            >
-              <img src={links} alt="Links Icon" className="sidebar-icon" />
-              Links
-            </Link>
-            <Link
-              to="/profile/appearance"
-              className={
-                location.pathname === "/profile/appearance" ? "active" : ""
-              }
-            >
-              <img
-                src={appearance}
-                alt="Appearance Icon"
-                className="sidebar-icon"
-              />
-              Appearance
-            </Link>
-            <Link
-              to="/analytics"
-              className={location.pathname === "/analytics" ? "active" : ""}
-            >
-              <img
-                src={analytics}
-                alt="Analytics Icon"
-                className="sidebar-icon"
-              />
-              Analytics
-            </Link>
-            <Link
-              to="/settings"
-              className={location.pathname === "/settings" ? "active" : ""}
-            >
-              <img
-                src={settings}
-                alt="Settings Icon"
-                className="sidebar-icon"
-              />
-              Settings
-            </Link>
-          </nav>
-          <div
-            className="sidebar-profile"
-            onClick={() => setShowLogout(!showLogout)}
+      <aside
+        className={`sidebar ${
+          isScrolling ? "show-on-scroll" : "hide-on-scroll"
+        }`}
+      >
+        <div className="sidebar-logo">
+          <img src={sparkLogo} alt="Logo" />
+        </div>
+        <nav>
+          <Link
+            to="/links"
+            className={location.pathname === "/links" ? "active" : ""}
+          >
+            <img src={links} alt="Links Icon" className="sidebar-icon" />
+            Links
+          </Link>
+          <Link
+            to="/profile/appearance"
+            className={
+              location.pathname === "/profile/appearance" ? "active" : ""
+            }
           >
             <img
-              src={user?.profileImage || defaultProfile}
-              alt="Profile"
-              className="profile-icon"
+              src={appearance}
+              alt="Appearance Icon"
+              className="sidebar-icon"
             />
-            <span>
-              {user?.firstName} {user?.lastName}
-            </span>
-            {showLogout && (
-              <div className="logout-popup">
-                <button onClick={handleLogout} className="logout-btn">
-                  <img
-                    src={logoutIcon}
-                    alt="Logout Icon"
-                    className="logout-icon"
-                  />
-                  <span>Sign out</span>
-                </button>
-              </div>
-            )}
-          </div>
-        </aside>
-      )}
+            Appearance
+          </Link>
+          <Link
+            to="/analytics"
+            className={location.pathname === "/analytics" ? "active" : ""}
+          >
+            <img
+              src={analytics}
+              alt="Analytics Icon"
+              className="sidebar-icon"
+            />
+            Analytics
+          </Link>
+          <Link
+            to="/settings"
+            className={location.pathname === "/settings" ? "active" : ""}
+          >
+            <img src={settings} alt="Settings Icon" className="sidebar-icon" />
+            Settings
+          </Link>
+        </nav>
+        <div
+          className="sidebar-profile"
+          onClick={() => setShowLogout(!showLogout)}
+        >
+          <img
+            src={user?.profileImage || defaultProfile}
+            alt="Profile"
+            className="profile-icon"
+          />
+          <span>
+            {user?.firstName} {user?.lastName}
+          </span>
+          {showLogout && (
+            <div className="logout-popup">
+              <button onClick={handleLogout} className="logout-btn">
+                <img
+                  src={logoutIcon}
+                  alt="Logout Icon"
+                  className="logout-icon"
+                />
+                <span>Sign out</span>
+              </button>
+            </div>
+          )}
+        </div>
+      </aside>
     </>
   );
 };
