@@ -99,6 +99,16 @@ const Sidebar = () => {
     };
   }, []);
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      if (document.body.scrollHeight > window.innerHeight) {
+        setShowMobileHeader(false);
+        setIsScrolling(false);
+      }
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [location.pathname]);
+
   const handleLogout = () => {
     localStorage.removeItem("token");
     navigate("/");
