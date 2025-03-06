@@ -54,8 +54,6 @@ const Sidebar = () => {
   const [isScrolling, setIsScrolling] = useState(false);
   const [showMobileHeader, setShowMobileHeader] = useState(true);
 
-  const isDashboard = location.pathname === "/dashboard";
-
   useEffect(() => {
     let scrollTimeout = null;
     let headerTimeout = null;
