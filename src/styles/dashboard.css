@@ -71,7 +71,16 @@
         top: 0;
         left: 0;
         right: 0;
+        transition: transform 0.3s ease;
         z-index: 9999;
+    }
+
+    .show-mobile-header {
+        transform: translateY(0%);
+    }
+
+    .hide-mobile-header {
+        transform: translateY(-100%);
     }
 
     .mobile-logo img {

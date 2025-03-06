@@ -9,10 +9,10 @@ import analytics from "../assets/dashboard/analytics-icon.png";
 import settings from "../assets/dashboard/settings-icon.png";
 import logoutIcon from "../assets/dashboard/logout-icon.png";
 
-const MobileHeader = ({ user, onLogout }) => {
+const MobileHeader = ({ className, user, onLogout }) => {
   const [showLogout, setShowLogout] = useState(false);
   return (
-    <header className="mobile-header">
+    <header className={`mobile-header ${className}`}>
       <div className="mobile-logo">
         <img src={sparkLogo} alt="Logo" />
       </div>
@@ -43,31 +43,39 @@ const Sidebar = () => {
   const navigate = useNavigate();
   const location = useLocation();
   const [showLogout, setShowLogout] = useState(false);
-
-  // State to track scrolling
   const [isScrolling, setIsScrolling] = useState(false);
+  const [showMobileHeader, setShowMobileHeader] = useState(true);
 
   useEffect(() => {
     let scrollTimeout = null;
+    let headerTimeout = null;
 
     const handleScroll = () => {
-      // Show sidebar immediately on scroll
       setIsScrolling(true);
-
-      // Clear any previous timer and start a new one
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
-        // Hide sidebar if no scroll event fires for 300ms
         setIsScrolling(false);
       }, 1000);
+
+      if (window.pageYOffset === 0) {
+        setShowMobileHeader(true);
+        clearTimeout(headerTimeout);
+      } else {
+        setShowMobileHeader(true);
+        clearTimeout(headerTimeout);
+        headerTimeout = setTimeout(() => {
+          if (window.pageYOffset > 0) {
+            setShowMobileHeader(false);
+          }
+        }, 1000);
+      }
     };
 
-    // Attach listener
     window.addEventListener("scroll", handleScroll);
-
     return () => {
       window.removeEventListener("scroll", handleScroll);
       clearTimeout(scrollTimeout);
+      clearTimeout(headerTimeout);
     };
   }, []);
 
@@ -78,7 +86,13 @@ const Sidebar = () => {
 
   return (
     <>
-      <MobileHeader user={user} onLogout={handleLogout} />
+      <MobileHeader
+        className={
+          showMobileHeader ? "show-mobile-header" : "hide-mobile-header"
+        }
+        user={user}
+        onLogout={handleLogout}
+      />
       <aside
         className={`sidebar ${
           isScrolling ? "show-on-scroll" : "hide-on-scroll"
