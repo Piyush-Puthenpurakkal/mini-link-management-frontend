@@ -98,6 +98,57 @@
     right: 20px;
 }
 
-.save-btn-settings:hover {
-    background-color: #246828;
+@media (max-width: 768px) {
+
+    /* Remove the left offset from the container */
+    .settings-container {
+        margin-top: 100px;
+        margin-left: 0;
+        padding: 10px;
+    }
+
+    .settings-header {
+        display: none;
+    }
+
+    /* Reduce padding and force full width */
+    .settings-content {
+        padding: 25px;
+        width: 90%;
+        max-width: 450px;
+    }
+
+    /* Make the form and its inputs take full available width */
+    .settings-form {
+        width: 100%;
+        max-width: 400px;
+    }
+
+    .settings-form input {
+        width: 100%;
+        padding: 10px;
+        font-size: 14px;
+        border-radius: 6px;
+    }
+
+    .save-btn-container {
+        display: flex;
+        justify-content: flex-end;
+        width: 100%;
+        margin-top: 20px;
+    }
+
+    /* Remove absolute positioning from the save button so it stacks naturally */
+    .save-btn-settings {
+        width: 100%;
+        max-width: 250px;
+        padding: 12px;
+        font-size: 16px;
+        margin-top: 15px;
+        position: static;
+        bottom: auto;
+        right: auto;
+        display: block;
+        text-align: center;
+    }
 }

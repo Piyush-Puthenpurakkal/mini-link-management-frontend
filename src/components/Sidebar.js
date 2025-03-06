@@ -64,6 +64,11 @@ const Sidebar = () => {
         setIsScrolling(false);
       }, 1000);
 
+      if (document.body.scrollHeight <= window.innerHeight) {
+        setShowMobileHeader(true);
+        return;
+      }
+
       if (window.pageYOffset === 0) {
         setShowMobileHeader(true);
         clearTimeout(headerTimeout);

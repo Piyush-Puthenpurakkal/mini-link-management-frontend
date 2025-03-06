@@ -1,7 +1,6 @@
 import { useContext, useState } from "react";
 import { Outlet } from "react-router-dom";
 import AuthContext from "../context/AuthContext";
-import Sidebar from "../components/Sidebar";
 import "../styles/dashboard.css";
 
 const Dashboard = () => {
@@ -14,7 +13,6 @@ const Dashboard = () => {
 
   return (
     <div className="dashboard-container">
-      {/* <Sidebar /> */}
       <main className="dashboard-content">
         <h1>
           Hi, {user?.firstName} {user?.lastName}!

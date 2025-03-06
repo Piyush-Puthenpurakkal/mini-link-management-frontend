@@ -733,8 +733,13 @@
     .appearance-container {
         flex-direction: column;
         align-items: center;
+        margin-top: 100px;
         margin-left: 0;
         width: 100%;
+    }
+
+    .greeting {
+        display: none;
     }
 
     .customization-panel {

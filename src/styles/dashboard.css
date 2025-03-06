@@ -158,11 +158,11 @@
     .logout-popup {
         left: 50% !important;
         right: auto !important;
-        transform: translateX(-70%) !important;
+        transform: translateX(-80%) !important;
         width: 130px;
         max-width: calc(100vw - 20px);
         box-sizing: border-box;
-        top: 25px;
+        top: 40px;
     }
 
     .logout-btn {

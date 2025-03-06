@@ -260,6 +260,14 @@
         text-align: center;
     }
 
+    /* .analytics-title {
+        display: none;
+    }
+
+    .analytics-subtitle {
+        display: none;
+    } */
+
     /* Force the charts grid to fill and center the space */
     .charts-grid {
         display: flex;

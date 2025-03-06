@@ -140,13 +140,15 @@ const Settings = () => {
             onChange={handleChange}
           />
 
-          <button
-            type="submit"
-            className="save-btn-settings"
-            disabled={loading}
-          >
-            {loading ? "Saving..." : "Save"}
-          </button>
+          <div className="save-btn-container">
+            <button
+              className="save-btn-settings"
+              onClick={handleProfileUpdate}
+              disabled={loading}
+            >
+              {loading ? "Saving..." : "Save"}
+            </button>
+          </div>
         </form>
       </div>
     </div>
