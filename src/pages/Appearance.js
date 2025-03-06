@@ -10,6 +10,9 @@ import { ThemeContext } from "../context/ThemeContext";
 import { ToastContext } from "../context/ToastContext";
 import "../styles/appearance.css";
 
+//Default image
+import defaultProfile from "../assets/avatar.png";
+
 const Appearance = () => {
   const { theme, setTheme } = useContext(ThemeContext);
   const { user } = useContext(AuthContext);
@@ -51,7 +54,7 @@ const Appearance = () => {
         });
         const updatedCustomization = {
           username: profileRes.data.username,
-          avatar: profileRes.data.profileImage,
+          avatar: profileRes.data.profileImage || defaultProfile,
           bannerColor: customizationRes.data.backgroundColor,
           layout: customizationRes.data.layout,
           buttonStyle: customizationRes.data.buttonStyle,
