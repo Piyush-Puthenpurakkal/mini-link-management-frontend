@@ -65,7 +65,7 @@ const Settings = () => {
         payload.password = formData.password;
       }
 
-      const res = await API.put("/settings/update", payload);
+      const res = await API.put("api/settings/update", payload);
 
       setUser({ name: updatedName, email: formData.email });
       setMessage(res.data.message || "Profile updated successfully");
