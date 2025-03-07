@@ -59,12 +59,6 @@ const Sidebar = () => {
     let headerTimeout = null;
 
     const handleScroll = () => {
-      if (location.pathname.includes("dashboard")) {
-        setShowMobileHeader(true);
-        setIsScrolling(true);
-        return;
-      }
-
       if (document.body.scrollHeight <= window.innerHeight) {
         setShowMobileHeader(true);
         setIsScrolling(true);
