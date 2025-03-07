@@ -102,9 +102,10 @@
 
     /* Remove the left offset from the container */
     .settings-container {
-        margin-top: 100px;
-        margin-left: 0;
+        max-width: 400px !important;
+        margin: 100px auto !important;
         padding: 10px;
+        overflow-x: auto;
     }
 
     .settings-header {
@@ -121,7 +122,8 @@
     /* Make the form and its inputs take full available width */
     .settings-form {
         width: 100%;
-        max-width: 400px;
+        max-width: 300px;
+        margin-right: 17px;
     }
 
     .settings-form input {
@@ -134,7 +136,7 @@
     .save-btn-container {
         display: flex;
         justify-content: flex-end;
-        width: 100%;
+        width: 94%;
         margin-top: 20px;
     }
 

@@ -735,7 +735,19 @@
         align-items: center;
         margin-top: 100px;
         margin-left: 0;
+        padding: 0;
         width: 100%;
+        overflow-x: auto;
+    }
+
+    .customization-panel {
+        width: 100%;
+        margin: auto !important;
+        padding: 0;
+    }
+
+    .customization-section {
+        margin: 0 auto 20px;
     }
 
     .greeting {
