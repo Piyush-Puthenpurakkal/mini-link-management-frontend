@@ -73,7 +73,6 @@
         right: 0;
         transition: transform 0.3s ease;
         z-index: 9999;
-        overflow-x: auto !important;
     }
 
     .show-mobile-header {
@@ -111,6 +110,7 @@
         padding: 10px 0;
         transform: translateY(100%);
         z-index: 9999;
+        overflow-x: auto;
     }
 
     .show-on-scroll {
