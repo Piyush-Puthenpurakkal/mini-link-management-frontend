@@ -234,7 +234,7 @@
     display: flex;
     flex-direction: column;
     position: relative;
-    width: 55%;
+    width: 100%;
     max-width: 450px;
     padding: 20px;
     border-radius: 10px;
@@ -245,7 +245,6 @@
 /* Customization Sections */
 .customization-section {
     margin-bottom: 20px;
-    padding: 15px;
     border-radius: 8px;
 }
 

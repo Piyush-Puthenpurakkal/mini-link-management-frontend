@@ -103,9 +103,8 @@
     /* Remove the left offset from the container */
     .settings-container {
         max-width: 400px !important;
-        margin: 100px auto !important;
-        padding: 10px;
-        overflow-x: auto;
+        margin: 100px auto;
+        padding: 0;
     }
 
     .settings-header {

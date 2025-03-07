@@ -641,44 +641,46 @@
 }
 
 @media (max-width: 768px) {
-
-    /* Make the container stack vertically */
     .links-container {
-        margin-top: 100px;
+        margin: 100px auto !important;
         flex-direction: column;
-        margin-left: 0;
-        /* remove desktop offset */
-        padding: 15px;
+        padding: 0;
+        overflow-x: auto;
     }
 
     .greeting {
         display: none;
     }
 
-    /* Make the left (profile preview) and right (customization) sections full width */
-    .left-section,
+    .left-section {
+        margin: auto;
+    }
+
     .right-section {
-        flex: none;
-        width: 100%;
+        max-width: 100% !important;
+        width: 100% !important;
         margin-left: 0;
-    }
-
-    /* Optionally, add some vertical spacing */
-    .right-section {
         margin-top: 20px;
-        padding: 15px;
+        padding: 10px;
     }
 
-    /* Make the links page (banner/color section) full width */
+    .profile-preview-container {
+        margin: auto;
+    }
+
+    .profile-section {
+        max-width: 100% !important;
+        width: 100%;
+    }
+
+    .links-list {
+        width: 100%;
+        max-width: 100%;
+    }
+
     .links-page {
         width: 100%;
         max-width: 100%;
         margin: 20px 0;
-    }
-
-    /* If needed, force the links list to use 100% width */
-    .links-list {
-        width: 100%;
-        max-width: 100%;
     }
 }
