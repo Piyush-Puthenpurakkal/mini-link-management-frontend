@@ -131,7 +131,7 @@ input {
 
 /* Input Fields */
 .auth-box input {
-    width: 94%;
+    width: 100%;
     padding: 12px;
     margin-bottom: 10px;
     border: 1px solid #ccc;
@@ -359,4 +359,51 @@ input {
 .terms-container input {
     width: auto;
     margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .auth-container {
+        flex-direction: column;
+        padding: 10px;
+        margin-left: 0;
+        width: 100vw;
+    }
+
+    .auth-left {
+        flex: none;
+        width: 100%;
+        padding: 1rem;
+        position: relative;
+        min-height: 100vh;
+    }
+
+    .auth-right {
+        display: none;
+    }
+
+    .auth-box {
+        width: 100%;
+        max-width: 350px;
+        margin: 0 auto;
+    }
+
+    .spark-logo,
+    .illustration-image {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .auth-btn,
+    .login-btn,
+    .continue-btn,
+    .google-btn {
+        width: 100%;
+        max-width: none;
+    }
+
+    label,
+    input,
+    .error {
+        font-size: 14px;
+    }
 }
