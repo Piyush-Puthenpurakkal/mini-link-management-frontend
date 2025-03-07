@@ -36,7 +36,7 @@
 
 /* Sidebar */
 .sidebar {
-    width: 170px;
+    width: 200px;
     background: white;
     color: white;
     padding: 20px;
@@ -73,6 +73,7 @@
         right: 0;
         transition: transform 0.3s ease;
         z-index: 9999;
+        overflow-x: auto !important;
     }
 
     .show-mobile-header {
@@ -92,13 +93,11 @@
         cursor: pointer;
     }
 
-    /* b) Hide the desktop logo & profile inside the sidebar on mobile */
     .sidebar-logo,
     .sidebar-profile {
         display: none !important;
     }
 
-    /* c) Turn the sidebar into a bottom nav bar */
     .sidebar {
         top: auto;
         bottom: 0;
@@ -112,7 +111,6 @@
         padding: 10px 0;
         transform: translateY(100%);
         z-index: 9999;
-        /* Start hidden; we'll toggle show/hide with JS classes */
     }
 
     .show-on-scroll {
@@ -204,7 +202,6 @@ nav a {
 }
 
 nav a.active {
-    /* background-color: #f6f6f4; */
     background-color: var(--bg-color);
     color: #008000;
     width: calc(100% + 41px);
@@ -244,7 +241,7 @@ nav a:hover {
     padding: 5px;
     border: 1px solid black;
     border-radius: 20px;
-    margin-bottom: 65px;
+    margin-bottom: 30px;
     color: black;
 }
 

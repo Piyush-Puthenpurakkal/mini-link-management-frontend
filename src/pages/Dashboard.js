@@ -4,6 +4,8 @@ import AuthContext from "../context/AuthContext";
 import Sidebar from "../components/Sidebar";
 import "../styles/dashboard.css";
 
+import defaultProfile from "../assets/avatar.png";
+
 const Dashboard = () => {
   const { user } = useContext(AuthContext);
   const [showLogout, setShowLogout] = useState(false);
@@ -22,7 +24,7 @@ const Dashboard = () => {
         <p>Great response today! Keep growing your digital presence.</p>
         <div className="profile-section" onClick={toggleLogout}>
           <img
-            src={user?.profileImage || "/default-avatar.png"}
+            src={user?.profileImage || defaultProfile}
             alt="Profile"
             className="profile-img"
           />

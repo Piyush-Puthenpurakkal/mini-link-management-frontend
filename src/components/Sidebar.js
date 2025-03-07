@@ -74,7 +74,7 @@ const Sidebar = () => {
       clearTimeout(scrollTimeout);
       scrollTimeout = setTimeout(() => {
         setIsScrolling(false);
-      }, 1000);
+      }, 1500);
 
       if (window.pageYOffset === 0) {
         setShowMobileHeader(true);
@@ -86,7 +86,7 @@ const Sidebar = () => {
           if (window.pageYOffset > 0) {
             setShowMobileHeader(false);
           }
-        }, 1000);
+        }, 1500);
       }
     };
 
@@ -105,7 +105,7 @@ const Sidebar = () => {
         setShowMobileHeader(false);
         setIsScrolling(false);
       }
-    }, 1000);
+    }, 2000);
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
