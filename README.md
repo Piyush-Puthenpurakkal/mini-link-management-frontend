@@ -4,7 +4,7 @@ This is the frontend for the Mini Link Management system. It provides a user-fri
 
 ## Repository
 
-GitHub Repository: [Mini Link Management Frontend](https://https://github.com/Piyush-Puthenpurakkal/mini-link-management-frontend)
+GitHub Repository: [Mini Link Management Frontend](https://github.com/Piyush-Puthenpurakkal/mini-link-management-frontend)
 
 ## Features
 
